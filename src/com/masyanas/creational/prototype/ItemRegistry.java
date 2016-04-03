@@ -2,23 +2,19 @@ package com.masyanas.creational.prototype;
 
 import java.util.Hashtable;
 
-public class ItemRegistry
-{
+public class ItemRegistry {
     private Hashtable<String, Item> map;
 
-    public ItemRegistry()
-    {
+    public ItemRegistry() {
         map = new Hashtable();
         loadCache();
     }
 
-    public Item createBasicItem(String type)
-    {
+    public Item createBasicItem(String type) {
         return map.get(type).clone();
     }
 
-    private void loadCache()
-    {
+    private void loadCache() {
         Book book = new Book();
         book.setTitle("Design Patterns");
         book.setPrice(20.00);
